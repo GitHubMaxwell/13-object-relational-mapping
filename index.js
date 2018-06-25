@@ -1,7 +1,11 @@
 'use strict';
 
+require('dotenv').config();
 require('babel-register');
 
-require('dotenv').config();
+const mongoose = require('mongoose');
+mongoose.connect(process.env.MONGODB_URI);
 
-require('./src/app.js').start(process.env.PORT);
+const app = require('./src/app.js');
+
+app.start(process.env.PORT);

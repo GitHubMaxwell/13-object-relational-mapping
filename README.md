@@ -7,7 +7,7 @@
 
 * TRAVIS: https://travis-ci.com/GitHubMaxwell/13-object-relational-mapping
 * HEROKU: https://lab13-max.herokuapp.com/
-* GitHUB PR:
+* GitHUB PR: https://github.com/GitHubMaxwell/13-object-relational-mapping/pull/1
 
 ## Steps
 * fork/clone code

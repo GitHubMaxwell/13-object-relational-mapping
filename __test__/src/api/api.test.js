@@ -110,6 +110,44 @@ describe('API MODULE 1', () => {
       .catch( err=> fail(err));
   });
 
+  xit('Failed UPDATE on one cat', () => {
+    // const oldCat = {
+    //   name: 'FAILED CAT',
+    //   color: 'FAIL',
+    // };
+
+    return mockRequest.put(`/api/v1/cats/`)
+      .then( data => {
+        try {
+          expect(data.statusCode).toEqual(400);
+        }
+        catch(err) {
+          console.log('ERR STATUS CODE: ', err.statusCode);
+          expect(err.statusCode).toEqual(400);
+        }
+      })
+      .catch( err => {
+        fail(err);
+      });
+
+    // return mockRequest.post(API_URL)
+    //   .send(oldCat)
+    //   .then(results => {
+    //     const cat = JSON.parse(results.text);
+    //     return mockRequest.put(`/api/v1/cats/${cat._id}`)
+    //       .then(data => {
+    //         console.log('INDSIDE PUT THEN: ', data.body);
+    //         expect(true).toEqual(false);
+
+    //       })
+    //       .catch( err => {
+    //         console.log('ERR STATUS CODE: ', err.statusCode);
+    //         expect(err.status).toEqual(400);
+    //       });
+    //   })
+    //   .catch( err=> fail(err));
+  });
+
   it('DELETE one cat', () => {
     const oldCat = {
       name: 'delete CAT',

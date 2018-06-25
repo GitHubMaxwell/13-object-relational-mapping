@@ -27,10 +27,6 @@ describe('API MODULE 1', () => {
         expect(data.body.color).toEqual('brown');
         expect(data.status).toEqual(200);
         done();
-      })
-      .catch(err => {
-        console.log('ERR: ');
-        done();
       });
   });
 

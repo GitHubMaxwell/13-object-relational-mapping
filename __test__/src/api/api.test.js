@@ -1,5 +1,4 @@
 'use strict';
-// let app = require('../../../src/app.js');
 
 import superagent from 'superagent';
 import app from '../../../src/app.js';
@@ -39,8 +38,6 @@ describe('API MODULE 1', () => {
     superagent.post('http://localhost:3000/api/v1/cats')
       .send(obj)
       .then(data => {
-        // console.log('RES BODY: ', res.body);
-        // console.log('RES BODY STATUS: ', res.status);
         superagent.get(`http://localhost:3000/api/v1/cats/${data.body.id}`)
           .then(res => {
             expect(res.body.title).toEqual('maxtitle');
@@ -73,12 +70,10 @@ describe('API MODULE 1', () => {
     superagent.get('http://localhost:3000/api/v1/cats')
       .then(data => {
         let database = data.body;
-        // let element = '';
         let elementArr = [];
         for (var property in database) {
           elementArr.push(database[property].title);
         }
-        // console.log('DATABASE', database);
         for (let i = 0; i < elementArr.length; i++) {
           expect(elementArr[i]);
         }

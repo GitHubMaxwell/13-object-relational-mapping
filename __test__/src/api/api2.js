@@ -20,8 +20,6 @@ import Cat from '../../../src/models/cats_model.js';
 
 // const API_URL = '/api/v1/cats';
 
-
-
 afterAll(() => {
   mongoose.connection.close();
   console.log('CLOSED Mongoose Connection');

@@ -11,12 +11,12 @@ app.use(router);
 
 
 let serverOn = false;
-let server;
+// let server;
 
 module.exports = {
   start: (port) => {
     if(!serverOn) {
-      server = app.listen(port, (err) => {
+      app.listen(port, (err) => {
         if(err) {throw err;}
         console.log('LISTENING ON PORT: ', port);
       });
@@ -25,8 +25,16 @@ module.exports = {
     }
   },
   stop: () => {
-    server.close( () => {
+    app.close( () => {
       console.log('Server has stopped');
     });
   },
+  server: app,
 };
+
+// module.exports = {
+
+//   start: port => app.listen(port, console.log('Listening on PORT', port)),
+//   stop: () => app.close(),
+//   server: app,
+// };
